@@ -10,6 +10,23 @@ Linear presets for converting common units
 
     npm i linear-presets
 
+## Presets
+
+- [x] metric prefixes
+- [x] length
+- [x] mass
+- [x] time
+- [x] electric current
+- [x] temperature
+- [x] amount of substance
+- [x] speed
+- [x] area
+- [ ] volume
+- [ ] plane angle
+- [ ] luminous intensity
+- [ ] fuel consumption
+- [ ] digital storage
+
 ## See more
 
 - [tests](test/presets.js)
