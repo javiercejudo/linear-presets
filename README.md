@@ -21,7 +21,7 @@ Linear presets for converting common units
 - [x] amount of substance
 - [x] speed
 - [x] area
-- [ ] volume
+- [x] volume
 - [ ] plane angle
 - [ ] luminous intensity
 - [ ] fuel consumption
