@@ -224,11 +224,12 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, area.squareMetreToSquareInch), 'squareMetreToSquareInch');
   });
 
+  it.skip('should include plane angle', function() {
+  });
+
   it.skip('should include fuel consumption', function() {
-    should(presets.fuelConsumption).be.an.Object.and.not.eql({});
   });
 
   it.skip('should include digital storage', function() {
-    should(presets.digitalStorage).be.an.Object.and.not.eql({});
   });
 });
