@@ -4,9 +4,8 @@
 
 var should = require('should');
 var converter = require('linear-converter');
-var presets = require('../src/linear-presets.js');
+var presets = require('../src/linear-presets.js').PRESETS;
 
-var presets = converter.PRESETS;
 var convert = converter.convert;
 var invert = converter.invertPreset;
 
@@ -179,8 +178,30 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, speed.metresSecondToKnot), 'metresSecondToKnot');
   });
 
-  it.skip('should include volume', function() {
-    should(presets.volume).be.an.Object.and.not.eql({});
+  it('should include volume', function() {
+    var volume = presets.volume;
+
+    (Math.PI * 4 / 3).should.be.exactly(convert(1e+6 * Math.PI * 4 / 3, invert(volume.cubicMetreToMillilitre)), 'cubicMetreToMillilitre')
+      .and.exactly(convert(1000 * Math.PI * 4 / 3, invert(volume.cubicMetreToLitre)), 'cubicMetreToLitre')
+      .and.exactly(convert(255615.66152340596, invert(volume.cubicMetreToCubicInch)), 'cubicMetreToCubicInch')
+      .and.exactly(convert(147.9257300482673, invert(volume.cubicMetreToCubicFoot)), 'cubicMetreToCubicFoot')
+      .and.exactly(convert(147424.80522071107, invert(volume.cubicMetreToImperialFluidOunce)), 'cubicubicMetreToCubicFootcMetreToImperialFluidOunce')
+      .and.exactly(convert(29484.96104414222, invert(volume.cubicMetreToImperialGill)), 'cubicMetreToImperialGill')
+      .and.exactly(convert(7371.240261035554, invert(volume.cubicMetreToImperialPint)), 'cubicMetreToImperialPint')
+      .and.exactly(convert(3685.6201305177774, invert(volume.cubicMetreToImperialQuart)), 'cubicMetreToImperialQuart')
+      .and.exactly(convert(921.4050326294443, invert(volume.cubicMetreToImperialGallon)), 'cubicMetreToImperialGallon')
+      .and.exactly(convert(8852.490442369037, invert(volume.cubicMetreToUSPint)), 'cubicMetreToUSPint');
+
+    (0).should.be.exactly(convert(0, volume.cubicMetreToMillilitre), 'cubicMetreToMillilitre')
+      .and.exactly(convert(0, volume.cubicMetreToLitre), 'cubicMetreToLitre')
+      .and.exactly(convert(0, volume.cubicMetreToCubicInch), 'cubicMetreToCubicInch')
+      .and.exactly(convert(0, volume.cubicMetreToCubicFoot), 'cubicMetreToCubicFoot')
+      .and.exactly(convert(0, volume.cubicMetreToImperialFluidOunce), 'cubicMetreToImperialFluidOunce')
+      .and.exactly(convert(0, volume.cubicMetreToImperialGill), 'cubicMetreToImperialGill')
+      .and.exactly(convert(0, volume.cubicMetreToImperialPint), 'cubicMetreToImperialPint')
+      .and.exactly(convert(0, volume.cubicMetreToImperialQuart), 'cubicMetreToImperialQuart')
+      .and.exactly(convert(0, volume.cubicMetreToImperialGallon), 'cubicMetreToImperialGallon')
+      .and.exactly(convert(0, volume.cubicMetreToUSPint), 'cubicMetreToUSPint');
   });
 
   it('should include area', function() {
