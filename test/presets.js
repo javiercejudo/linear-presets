@@ -160,8 +160,14 @@ describe('built-in presets', function() {
     convert(0, substance.moleToPoundMole).should.be.exactly(0);
   });
 
-  it.skip('should include luminous intensity', function() {
-    should(presets.luminousIntensity).be.an.Object.and.not.eql({});
+  it('should include luminous intensity', function() {
+    var intensity = presets.luminousIntensity;
+
+    (100).should.be.exactly(convert(101.9367991845056, invert(intensity.candelaToCandlepower)), 'candelaToCandlepower')
+      .and.exactly(convert(108.69565217391303, invert(intensity.candelaToHefnerkerze)), 'candelaToHefnerkerze');
+
+    (0).should.be.exactly(convert(0, intensity.candelaToCandlepower), 'candelaToCandlepower')
+      .and.exactly(convert(0, intensity.candelaToHefnerkerze), 'candelaToHefnerkerze');
   });
 
   it('should include speed', function() {
@@ -190,7 +196,13 @@ describe('built-in presets', function() {
       .and.exactly(convert(7371.240261035554, invert(volume.cubicMetreToImperialPint)), 'cubicMetreToImperialPint')
       .and.exactly(convert(3685.6201305177774, invert(volume.cubicMetreToImperialQuart)), 'cubicMetreToImperialQuart')
       .and.exactly(convert(921.4050326294443, invert(volume.cubicMetreToImperialGallon)), 'cubicMetreToImperialGallon')
-      .and.exactly(convert(8852.490442369037, invert(volume.cubicMetreToUSPint)), 'cubicMetreToUSPint');
+      .and.exactly(convert(1133118.7766232367, invert(volume.cubicMetreToUSDram)), 'cubicMetreToUSDram')
+      .and.exactly(convert(141639.8470779046, invert(volume.cubicMetreToUSFluidOunce)), 'cubicMetreToUSFluidOunce')
+      .and.exactly(convert(35409.96176947615, invert(volume.cubicMetreToUSGill)), 'cubicMetreToUSGill')
+      .and.exactly(convert(17704.980884738074, invert(volume.cubicMetreToUSCup)), 'cubicMetreToUSCup')
+      .and.exactly(convert(8852.490442369037, invert(volume.cubicMetreToUSPint)), 'cubicMetreToUSPint')
+      .and.exactly(convert(4426.245221184518, invert(volume.cubicMetreToUSQuart)), 'cubicMetreToUSQuart')
+      .and.exactly(convert(1106.5613052961296, invert(volume.cubicMetreToUSGallon)), 'cubicMetreToUSGallon');
 
     (0).should.be.exactly(convert(0, volume.cubicMetreToMillilitre), 'cubicMetreToMillilitre')
       .and.exactly(convert(0, volume.cubicMetreToLitre), 'cubicMetreToLitre')
@@ -201,7 +213,13 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, volume.cubicMetreToImperialPint), 'cubicMetreToImperialPint')
       .and.exactly(convert(0, volume.cubicMetreToImperialQuart), 'cubicMetreToImperialQuart')
       .and.exactly(convert(0, volume.cubicMetreToImperialGallon), 'cubicMetreToImperialGallon')
-      .and.exactly(convert(0, volume.cubicMetreToUSPint), 'cubicMetreToUSPint');
+      .and.exactly(convert(0, volume.cubicMetreToUSDram), 'cubicMetreToUSDram')
+      .and.exactly(convert(0, volume.cubicMetreToUSFluidOunce), 'cubicMetreToUSFluidOunce')
+      .and.exactly(convert(0, volume.cubicMetreToUSGill), 'cubicMetreToUSGill')
+      .and.exactly(convert(0, volume.cubicMetreToUSCup), 'cubicMetreToUSCup')
+      .and.exactly(convert(0, volume.cubicMetreToUSPint), 'cubicMetreToUSPint')
+      .and.exactly(convert(0, volume.cubicMetreToUSQuart), 'cubicMetreToUSQuart')
+      .and.exactly(convert(0, volume.cubicMetreToUSGallon), 'cubicMetreToUSGallon');
   });
 
   it('should include area', function() {

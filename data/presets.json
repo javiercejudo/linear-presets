@@ -92,10 +92,16 @@
     "cubicMetreToImperialPint": [[0, 0.00056826125], [0, 1]],
     "cubicMetreToImperialQuart": [[0, 0.0011365225], [0, 1]],
     "cubicMetreToImperialGallon": [[0, 0.00454609], [0, 1]],
-    "cubicMetreToUSFluidOunce": [[0, 0.000473176473], [0, 1]],
-    "cubicMetreToUSGill": [[0, 0.000473176473], [0, 1]],
+    "cubicMetreToUSDram": [[0, 0.0000036966911953125], [0, 1]],
+    "cubicMetreToUSFluidOunce": [[0, 0.0000295735295625], [0, 1]],
+    "cubicMetreToUSGill": [[0, 0.00011829411825], [0, 1]],
+    "cubicMetreToUSCup": [[0, 0.0002365882365], [0, 1]],
     "cubicMetreToUSPint": [[0, 0.000473176473], [0, 1]],
-    "cubicMetreToUSQuart": [[0, 0.000473176473], [0, 1]],
-    "cubicMetreToUSGallon": [[0, 0.000473176473], [0, 1]]
+    "cubicMetreToUSQuart": [[0, 0.000946352946], [0, 1]],
+    "cubicMetreToUSGallon": [[0, 0.003785411784], [0, 1]]
+  },
+  "luminousIntensity": {
+    "candelaToCandlepower": [[0, 0.981], [0, 1]],
+    "candelaToHefnerkerze": [[0, 0.920], [0, 1]]
   }
 }
