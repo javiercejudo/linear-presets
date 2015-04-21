@@ -19,7 +19,7 @@ Linear presets for converting common units
 - [x] electric current
 - [x] temperature
 - [x] amount of substance
-- [x] speed
+- [x] velocity
 - [x] area
 - [x] volume
 - [x] luminous intensity

@@ -67,7 +67,7 @@
   "amountOfSubstance": {
     "moleToPoundMole": [[0, 453.59237], [0, 1]]
   },
-  "speed": {
+  "velocity": {
     "metresSecondToMilesHour": [[0, 1], [0, 2.236936292054402]],
     "metresSecondToFeetSecond": [[0, 1], [0, 3.280839895013123]],
     "metresSecondToKilometresHour": [[0, 1], [0, 3.6]],
@@ -103,5 +103,10 @@
   "luminousIntensity": {
     "candelaToCandlepower": [[0, 0.981], [0, 1]],
     "candelaToHefnerkerze": [[0, 0.920], [0, 1]]
+  },
+  "angle": {
+    "radianToTurn": [[0, 6.283185307179586], [0, 1]],
+    "radianToDegree": [[0, 6.283185307179586], [0, 360]],
+    "radianToGradian": [[0, 6.283185307179586], [0, 400]]
   }
 }

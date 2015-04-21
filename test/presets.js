@@ -170,18 +170,18 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, intensity.candelaToHefnerkerze), 'candelaToHefnerkerze');
   });
 
-  it('should include speed', function() {
-    var speed = presets.speed;
+  it('should include velocity', function() {
+    var velocity = presets.velocity;
 
-    (100/9.58).should.be.exactly(convert(23.35006567906474, invert(speed.metresSecondToMilesHour)), 'metresSecondToMilesHour')
-      .and.exactly(convert(34.24676299596162, invert(speed.metresSecondToFeetSecond)), 'metresSecondToFeetSecond')
-      .and.exactly(convert(37.578288100208766, invert(speed.metresSecondToKilometresHour)), 'metresSecondToKilometresHour')
-      .and.exactly(convert(20.290652321926984, invert(speed.metresSecondToKnot)), 'metresSecondToKnot');
+    (100/9.58).should.be.exactly(convert(23.35006567906474, invert(velocity.metresSecondToMilesHour)), 'metresSecondToMilesHour')
+      .and.exactly(convert(34.24676299596162, invert(velocity.metresSecondToFeetSecond)), 'metresSecondToFeetSecond')
+      .and.exactly(convert(37.578288100208766, invert(velocity.metresSecondToKilometresHour)), 'metresSecondToKilometresHour')
+      .and.exactly(convert(20.290652321926984, invert(velocity.metresSecondToKnot)), 'metresSecondToKnot');
 
-    (0).should.be.exactly(convert(0, speed.metresSecondToMilesHour), 'metresSecondToMilesHour')
-      .and.exactly(convert(0, speed.metresSecondToFeetSecond), 'metresSecondToFeetSecond')
-      .and.exactly(convert(0, speed.metresSecondToKilometresHour), 'metresSecondToKilometresHour')
-      .and.exactly(convert(0, speed.metresSecondToKnot), 'metresSecondToKnot');
+    (0).should.be.exactly(convert(0, velocity.metresSecondToMilesHour), 'metresSecondToMilesHour')
+      .and.exactly(convert(0, velocity.metresSecondToFeetSecond), 'metresSecondToFeetSecond')
+      .and.exactly(convert(0, velocity.metresSecondToKilometresHour), 'metresSecondToKilometresHour')
+      .and.exactly(convert(0, velocity.metresSecondToKnot), 'metresSecondToKnot');
   });
 
   it('should include volume', function() {
@@ -242,7 +242,16 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, area.squareMetreToSquareInch), 'squareMetreToSquareInch');
   });
 
-  it.skip('should include plane angle', function() {
+  it('should include plane angle', function() {
+    var angle = presets.angle;
+
+    (Math.PI / 4).should.be.exactly(convert(1 / 8, invert(angle.radianToTurn)), 'radianToTurn')
+      .and.exactly(convert(45, invert(angle.radianToDegree)), 'radianToDegree')
+      .and.exactly(convert(50, invert(angle.radianToGradian)), 'radianToGradian');
+
+    (0).should.be.exactly(convert(0, angle.radianToTurn), 'radianToTurn')
+      .and.exactly(convert(0, angle.radianToDegree), 'radianToDegree')
+      .and.exactly(convert(0, angle.radianToGradian), 'radianToGradian');
   });
 
   it.skip('should include fuel consumption', function() {
