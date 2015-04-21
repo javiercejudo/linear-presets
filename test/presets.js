@@ -13,24 +13,29 @@ describe('built-in presets', function() {
   it('should include metric prefixes', function() {
     var metric = presets.metricPrefixes;
 
-    (1).should.be.exactly(convert(1e-18, invert(metric.noneToExa)), 'noneToExa')
+    (1).should.be.approximately(convert(1e-24, invert(metric.noneToYotta)), 1e-15, 'noneToYotta')
+      .and.approximately(convert(1e-21, invert(metric.noneToZetta)), 1e-15, 'noneToZetta')
       .and.exactly(convert(1e-15, invert(metric.noneToPeta)), 'noneToPeta')
       .and.exactly(convert(1e-12, invert(metric.noneToTera)), 'noneToTera')
       .and.exactly(convert(1e-9, invert(metric.noneToGiga)), 'noneToGiga')
       .and.exactly(convert(1e-6, invert(metric.noneToMega)), 'noneToMega')
-      .and.exactly(convert(0.001, invert(metric.noneToKilo)), 'noneToKilo')
+      .and.exactly(convert(1e-3, invert(metric.noneToKilo)), 'noneToKilo')
       .and.exactly(convert(0.01, invert(metric.noneToHecto)), 'noneToHecto')
       .and.exactly(convert(0.1, invert(metric.noneToDeca)), 'noneToDeca')
       .and.exactly(convert(10, invert(metric.noneToDeci)), 'noneToDeci')
       .and.exactly(convert(100, invert(metric.noneToCenti)), 'noneToCenti')
-      .and.exactly(convert(1000, invert(metric.noneToMilli)), 'noneToMilli')
-      .and.exactly(convert(1e+6, invert(metric.noneToMicro)), 'noneToMicro')
-      .and.exactly(convert(1e+9, invert(metric.noneToNano)), 'noneToNano')
-      .and.exactly(convert(1e+12, invert(metric.noneToPico)), 'noneToPico')
-      .and.exactly(convert(1e+15, invert(metric.noneToFemto)), 'noneToFemto')
-      .and.exactly(convert(1e+18, invert(metric.noneToAtto)), 'noneToAtto');
+      .and.exactly(convert(1e3, invert(metric.noneToMilli)), 'noneToMilli')
+      .and.exactly(convert(1e6, invert(metric.noneToMicro)), 'noneToMicro')
+      .and.exactly(convert(1e9, invert(metric.noneToNano)), 'noneToNano')
+      .and.exactly(convert(1e12, invert(metric.noneToPico)), 'noneToPico')
+      .and.exactly(convert(1e15, invert(metric.noneToFemto)), 'noneToFemto')
+      .and.exactly(convert(1e18, invert(metric.noneToAtto)), 'noneToAtto')
+      .and.exactly(convert(1e21, invert(metric.noneToZepto)), 'noneToZepto')
+      .and.exactly(convert(1e24, invert(metric.noneToYocto)), 'noneToYocto');
 
-    (0).should.be.exactly(convert(0, metric.noneToExa), 'noneToExa')
+    (0).should.be.exactly(convert(0, metric.noneToYotta), 'noneToYotta')
+      .and.exactly(convert(0, metric.noneToZetta), 'noneToZetta')
+      .and.exactly(convert(0, metric.noneToExa), 'noneToExa')
       .and.exactly(convert(0, metric.noneToPeta), 'noneToPeta')
       .and.exactly(convert(0, metric.noneToTera), 'noneToTera')
       .and.exactly(convert(0, metric.noneToGiga), 'noneToGiga')
@@ -45,7 +50,9 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, metric.noneToNano), 'noneToNano')
       .and.exactly(convert(0, metric.noneToPico), 'noneToPico')
       .and.exactly(convert(0, metric.noneToFemto), 'noneToFemto')
-      .and.exactly(convert(0, metric.noneToAtto), 'noneToAtto');
+      .and.exactly(convert(0, metric.noneToAtto), 'noneToAtto')
+      .and.exactly(convert(0, metric.noneToZepto), 'noneToZepto')
+      .and.exactly(convert(0, metric.noneToYocto), 'noneToYocto');
   });
 
   it('should include length', function() {
@@ -254,9 +261,27 @@ describe('built-in presets', function() {
       .and.exactly(convert(0, angle.radianToGradian), 'radianToGradian');
   });
 
-  it.skip('should include fuel consumption', function() {
-  });
+  it('should include digital storage', function() {
+    var digital = presets.digitalInformation;
 
-  it.skip('should include digital storage', function() {
+    (760217600).should.be.exactly(convert(6081740800, invert(digital.byteToBit)), 'byteToBit')
+      .and.exactly(convert(742400, invert(digital.byteToKibibyte)), 'byteToKibibyte')
+      .and.exactly(convert(725, invert(digital.byteToMebibyte)), 'byteToMebibyte')
+      .and.exactly(convert(0.7080078125, invert(digital.byteToGibibyte)), 'byteToGibibyte')
+      .and.exactly(convert(0.0006914138793945312, invert(digital.byteToTebibyte)), 'byteToTebibyte')
+      .and.exactly(convert(6.752088665962219e-7, invert(digital.byteToPebibyte)), 'byteToPebibyte')
+      .and.exactly(convert(6.59383658785373e-10, invert(digital.byteToExbibyte)), 'byteToExbibyte')
+      .and.exactly(convert(6.439293542825908e-13, invert(digital.byteToZebibyte)), 'byteToZebibyte')
+      .and.exactly(convert(6.288372600415926e-16, invert(digital.byteToYobibyte)), 'byteToYobibyte');
+
+    (0).should.be.exactly(convert(0, digital.byteToBit), 'byteToBit')
+      .and.exactly(convert(0, digital.byteToKibibyte), 'byteToKibibyte')
+      .and.exactly(convert(0, digital.byteToMebibyte), 'byteToMebibyte')
+      .and.exactly(convert(0, digital.byteToGibibyte), 'byteToGibibyte')
+      .and.exactly(convert(0, digital.byteToTebibyte), 'byteToTebibyte')
+      .and.exactly(convert(0, digital.byteToPebibyte), 'byteToPebibyte')
+      .and.exactly(convert(0, digital.byteToExbibyte), 'byteToExbibyte')
+      .and.exactly(convert(0, digital.byteToZebibyte), 'byteToZebibyte')
+      .and.exactly(convert(0, digital.byteToYobibyte), 'byteToYobibyte');
   });
 });

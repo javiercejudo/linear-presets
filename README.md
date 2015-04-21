@@ -24,8 +24,7 @@ Linear presets for converting common units
 - [x] volume
 - [x] luminous intensity
 - [x] plane angle
-- [ ] fuel consumption
-- [ ] digital storage
+- [x] digital storage
 
 ## See more
 
