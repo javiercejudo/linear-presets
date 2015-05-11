@@ -18,6 +18,7 @@ Linear presets for converting common units
 - [x] time
 - [x] electric current
 - [x] temperature
+- [x] temperature difference
 - [x] amount of substance
 - [x] velocity
 - [x] area
