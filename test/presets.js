@@ -3,11 +3,17 @@
 'use strict';
 
 var should = require('should');
-var converter = require('linear-converter');
-var presets = require('../src/linear-presets.js').PRESETS;
+var presets = require('../src/linear-presets').PRESETS;
 
-var convert = converter.convert;
-var invert = converter.invertPreset;
+var convert = function convert(x, preset) {
+  return preset[1][0] +
+    (x -preset[0][0]) / (preset[0][1] - preset[0][0]) *
+    (preset[1][1] - preset[1][0]);
+};
+
+var invert = function invert(preset) {
+  return preset.slice(0).reverse();
+};
 
 describe('built-in presets', function() {
   it('should include metric prefixes', function() {
