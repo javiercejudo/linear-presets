@@ -3,12 +3,11 @@
 'use strict';
 
 var should = require('should');
+var rescale = require('rescale').rescale;
 var presets = require('../src/linear-presets').PRESETS;
 
 var convert = function convert(x, preset) {
-  return preset[1][0] +
-    (x -preset[0][0]) / (preset[0][1] - preset[0][0]) *
-    (preset[1][1] - preset[1][0]);
+  return rescale(x, preset[0], preset[1]);
 };
 
 var invert = function invert(preset) {
