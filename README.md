@@ -12,20 +12,20 @@ Linear presets for converting common units
 
 ## Presets
 
-- [x] metric prefixes
-- [x] length
-- [x] mass
-- [x] time
-- [x] electric current
-- [x] temperature
-- [x] temperature difference
-- [x] amount of substance
-- [x] velocity
-- [x] area
-- [x] volume
-- [x] luminous intensity
-- [x] plane angle
-- [x] digital storage
+- metric prefixes
+- length
+- mass
+- time
+- electric current
+- temperature
+- temperature difference
+- amount of substance
+- velocity
+- area
+- volume
+- luminous intensity
+- plane angle
+- digital storage
 
 ## See more
 
