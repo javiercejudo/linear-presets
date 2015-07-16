@@ -31,5 +31,8 @@
     "rescale": "^4.0.1",
     "rimraf": "^2.3.2",
     "should": "^5.0.0"
+  },
+  "dependencies": {
+    "linear-presets-temperature": "^1.0.0"
   }
 }

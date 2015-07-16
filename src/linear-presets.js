@@ -2,4 +2,8 @@
 
 'use strict';
 
-exports.PRESETS = require('../data/presets.json');
+var presets = require('../data/presets.json');
+
+presets.temperature = require('linear-presets-temperature')
+
+exports.PRESETS = presets;

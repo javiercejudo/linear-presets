@@ -146,23 +146,15 @@ describe('built-in presets', function() {
   });
 
   it('should include temperature', function() {
-    var temp = presets.temperature;
-
-    (40).should.be.exactly(convert(104, invert(temp.celsiusToFahrenheit)), 'celsiusToFahrenheit')
-      .and.exactly(convert(313.15, invert(temp.celsiusToKelvin)), 'celsiusToKelvin')
-      .and.approximately(convert(563.67, invert(temp.celsiusToRankine)), 10e-14, 'celsiusToRankine')
-      .and.exactly(convert(90, invert(temp.celsiusToDelisle)), 'celsiusToDelisle')
-      .and.exactly(convert(13.2, invert(temp.celsiusToNewton)), 'celsiusToNewton')
-      .and.exactly(convert(32, invert(temp.celsiusToReaumur)), 'celsiusToReaumur')
-      .and.exactly(convert(28.5, invert(temp.celsiusToRomer)), 'celsiusToRomer');
-
-    (0).should.be.exactly(convert(32, invert(temp.celsiusToFahrenheit)), 'celsiusToFahrenheit')
-      .and.exactly(convert(273.15, invert(temp.celsiusToKelvin)), 'celsiusToKelvin')
-      .and.exactly(convert(491.67, invert(temp.celsiusToRankine)), 'celsiusToRankine')
-      .and.exactly(convert(150, invert(temp.celsiusToDelisle)), 'celsiusToDelisle')
-      .and.exactly(convert(0, invert(temp.celsiusToNewton)), 'celsiusToNewton')
-      .and.exactly(convert(0, invert(temp.celsiusToReaumur)), 'celsiusToReaumur')
-      .and.exactly(convert(7.5, invert(temp.celsiusToRomer)), 'celsiusToRomer');
+    presets.temperature.should.have.keys([
+      'celsiusToFahrenheit',
+      'celsiusToKelvin',
+      'celsiusToRankine',
+      'celsiusToDelisle',
+      'celsiusToNewton',
+      'celsiusToReaumur',
+      'celsiusToRomer',
+    ]);;
   });
 
   it('should include temperature difference', function() {
