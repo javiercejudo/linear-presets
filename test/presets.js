@@ -154,27 +154,19 @@ describe('built-in presets', function() {
       'celsiusToNewton',
       'celsiusToReaumur',
       'celsiusToRomer',
-    ]);;
+    ]);
   });
 
   it('should include temperature difference', function() {
-    var tempDiff = presets.temperatureDifference;
-
-    (138600).should.be.exactly(convert(249480, invert(tempDiff.celsiusToFahrenheit)), 'celsiusToFahrenheit')
-      .and.exactly(convert(138600, invert(tempDiff.celsiusToKelvin)), 'celsiusToKelvin')
-      .and.approximately(convert(249480, invert(tempDiff.celsiusToRankine)), 10e-14, 'celsiusToRankine')
-      .and.exactly(convert(-207900, invert(tempDiff.celsiusToDelisle)), 'celsiusToDelisle')
-      .and.exactly(convert(45738, invert(tempDiff.celsiusToNewton)), 'celsiusToNewton')
-      .and.exactly(convert(110880, invert(tempDiff.celsiusToReaumur)), 'celsiusToReaumur')
-      .and.exactly(convert(72765, invert(tempDiff.celsiusToRomer)), 'celsiusToRomer');
-
-    (0).should.be.exactly(convert(0, invert(tempDiff.celsiusToFahrenheit)), 'celsiusToFahrenheit')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToKelvin)), 'celsiusToKelvin')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToRankine)), 'celsiusToRankine')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToDelisle)), 'celsiusToDelisle')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToNewton)), 'celsiusToNewton')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToReaumur)), 'celsiusToReaumur')
-      .and.exactly(convert(0, invert(tempDiff.celsiusToRomer)), 'celsiusToRomer');
+    presets.temperatureDifference.should.have.keys([
+      'celsiusToFahrenheit',
+      'celsiusToKelvin',
+      'celsiusToRankine',
+      'celsiusToDelisle',
+      'celsiusToNewton',
+      'celsiusToReaumur',
+      'celsiusToRomer',
+    ]);
   });
 
   it('should include amount of substance', function() {
