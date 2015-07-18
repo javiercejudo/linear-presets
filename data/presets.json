@@ -1,26 +1,4 @@
 {
-  "metricPrefixes": {
-    "noneToYotta": [[0, 1e24], [0, 1]],
-    "noneToZetta": [[0, 1e21], [0, 1]],
-    "noneToExa": [[0, 1e18], [0, 1]],
-    "noneToPeta": [[0, 1e15], [0, 1]],
-    "noneToTera": [[0, 1e12], [0, 1]],
-    "noneToGiga": [[0, 1e9], [0, 1]],
-    "noneToMega": [[0, 1e6], [0, 1]],
-    "noneToKilo": [[0, 1e3], [0, 1]],
-    "noneToHecto": [[0, 100], [0, 1]],
-    "noneToDeca": [[0, 10], [0, 1]],
-    "noneToDeci": [[0, 1], [0, 10]],
-    "noneToCenti": [[0, 1], [0, 100]],
-    "noneToMilli": [[0, 1], [0, 1e3]],
-    "noneToMicro": [[0, 1], [0, 1e6]],
-    "noneToNano": [[0, 1], [0, 1e9]],
-    "noneToPico": [[0, 1], [0, 1e12]],
-    "noneToFemto": [[0, 1], [0, 1e15]],
-    "noneToAtto": [[0, 1], [0, 1e18]],
-    "noneToZepto": [[0, 1], [0, 1e21]],
-    "noneToYocto": [[0, 1], [0, 1e24]]
-  },
   "distance": {
     "metreToKilometre": [[0, 1e3], [0, 1]],
     "metreToCentimetre": [[0, 1], [0, 100]],
