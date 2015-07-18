@@ -12,13 +12,13 @@ Linear presets for converting common units
 
 ## Presets
 
-- metric prefixes
+- [metric prefixes](https://github.com/javiercejudo/linear-presets-metric-prefixes)
 - length
 - mass
 - time
 - electric current
-- temperature
-- temperature difference
+- [temperature](https://github.com/javiercejudo/linear-presets-temperature)
+- [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
 - amount of substance
 - velocity
 - area
