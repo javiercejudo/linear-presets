@@ -1,15 +1,4 @@
 {
-  "mass": {
-    "kilogramToMetricTon": [[0, 1e3], [0, 1]],
-    "kilogramToGram": [[0, 1], [0, 1e3]],
-    "kilogramToMilligram": [[0, 1], [0, 1e6]],
-    "kilogramToMicrogram": [[0, 1], [0, 1e9]],
-    "kilogramToLongTon": [[0, 1016], [0, 1]],
-    "kilogramToShortTon": [[0, 907.18474], [0, 1]],
-    "kilogramToStone": [[0, 6.35029318], [0, 1]],
-    "kilogramToPound": [[0, 0.45359237], [0, 1]],
-    "kilogramToOunce": [[0, 0.02834952312], [0, 1]]
-  },
   "time": {
     "secondToNanosecond": [[0, 1], [0, 1e9]],
     "secondToMicrosecond": [[0, 1], [0, 1e6]],
