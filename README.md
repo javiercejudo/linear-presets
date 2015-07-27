@@ -14,8 +14,8 @@ Linear presets for converting common units
 
 - [metric prefixes](https://github.com/javiercejudo/linear-presets-metric-prefixes)
 - [length](https://github.com/javiercejudo/linear-presets-length)
-- mass
-- time
+- [mass](https://github.com/javiercejudo/linear-presets-mass)
+- [time](https://github.com/javiercejudo/linear-presets-time)
 - electric current
 - [temperature](https://github.com/javiercejudo/linear-presets-temperature)
 - [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
