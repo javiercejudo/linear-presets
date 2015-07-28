@@ -27,6 +27,8 @@ Linear presets for converting common units
 - plane angle
 - digital storage
 
+See [all npm packages with linear presets](https://www.npmjs.com/browse/keyword/linear-presets).
+
 ## See more
 
 - [tests](test/presets.js)
