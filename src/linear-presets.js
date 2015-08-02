@@ -10,5 +10,6 @@ presets.temperatureDifference = require('linear-presets-temperature-difference')
 presets.distance = require('linear-presets-length');
 presets.mass = require('linear-presets-mass');
 presets.time = require('linear-presets-time');
+presets.area = require('linear-presets-area');
 
 exports.PRESETS = presets;
