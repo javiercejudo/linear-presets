@@ -21,8 +21,8 @@ Linear presets for converting common units
 - [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
 - amount of substance
 - velocity
-- area
-- volume
+- [area](https://github.com/javiercejudo/linear-presets-area)
+- [volume](https://github.com/javiercejudo/linear-presets-volume)
 - luminous intensity
 - plane angle
 - digital storage

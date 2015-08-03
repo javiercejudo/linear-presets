@@ -39,6 +39,7 @@
     "linear-presets-metric-prefixes": "^1.0.0",
     "linear-presets-temperature": "^1.0.0",
     "linear-presets-temperature-difference": "^1.0.0",
-    "linear-presets-time": "^1.0.0"
+    "linear-presets-time": "^1.0.0",
+    "linear-presets-volume": "^1.0.0"
   }
 }

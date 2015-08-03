@@ -11,5 +11,6 @@ presets.distance = require('linear-presets-length');
 presets.mass = require('linear-presets-mass');
 presets.time = require('linear-presets-time');
 presets.area = require('linear-presets-area');
+presets.volume = require('linear-presets-volume');
 
 exports.PRESETS = presets;
