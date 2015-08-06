@@ -16,7 +16,7 @@ var invert = function invert(preset) {
 
 describe('built-in presets', function() {
   it('should include metric prefixes', function() {
-    presets.metricPrefixes.should.have.keys([
+    presets.metricPrefixes.should.have.properties([
       'noneToYotta',
       'noneToZetta',
       'noneToExa',
@@ -41,7 +41,7 @@ describe('built-in presets', function() {
   });
 
   it('should include length', function() {
-    presets.distance.should.have.keys([
+    presets.distance.should.have.properties([
       'metreToKilometre',
       'metreToCentimetre',
       'metreToMillimetre',
@@ -54,7 +54,7 @@ describe('built-in presets', function() {
   });
 
   it('should include mass', function() {
-    presets.mass.should.have.keys([
+    presets.mass.should.have.properties([
       'kilogramToMetricTon',
       'kilogramToGram',
       'kilogramToMilligram',
@@ -68,7 +68,7 @@ describe('built-in presets', function() {
   });
 
   it('should include time', function() {
-    presets.time.should.have.keys([
+    presets.time.should.have.properties([
       'secondToNanosecond',
       'secondToMicrosecond',
       'secondToMillisecond',
@@ -92,7 +92,7 @@ describe('built-in presets', function() {
   });
 
   it('should include temperature', function() {
-    presets.temperature.should.have.keys([
+    presets.temperature.should.have.properties([
       'celsiusToFahrenheit',
       'celsiusToKelvin',
       'celsiusToRankine',
@@ -104,7 +104,7 @@ describe('built-in presets', function() {
   });
 
   it('should include temperature difference', function() {
-    presets.temperatureDifference.should.have.keys([
+    presets.temperatureDifference.should.have.properties([
       'celsiusToFahrenheit',
       'celsiusToKelvin',
       'celsiusToRankine',
@@ -147,7 +147,7 @@ describe('built-in presets', function() {
   });
 
   it('should include volume', function() {
-    presets.volume.should.have.keys([
+    presets.volume.should.have.properties([
       'cubicMetreToMillilitre',
       'cubicMetreToLitre',
       'cubicMetreToCubicInch',
@@ -168,7 +168,7 @@ describe('built-in presets', function() {
   });
 
   it('should include area', function() {
-    presets.area.should.have.keys([
+    presets.area.should.have.properties([
       'squareMetreToSquareKilometre',
       'squareMetreToHectare',
       'squareMetreToSquareMile',
@@ -192,26 +192,16 @@ describe('built-in presets', function() {
   });
 
   it('should include digital storage', function() {
-    var digital = presets.digitalInformation;
-
-    (760217600).should.be.exactly(convert(6081740800, invert(digital.byteToBit)), 'byteToBit')
-      .and.exactly(convert(742400, invert(digital.byteToKibibyte)), 'byteToKibibyte')
-      .and.exactly(convert(725, invert(digital.byteToMebibyte)), 'byteToMebibyte')
-      .and.exactly(convert(0.7080078125, invert(digital.byteToGibibyte)), 'byteToGibibyte')
-      .and.exactly(convert(0.0006914138793945312, invert(digital.byteToTebibyte)), 'byteToTebibyte')
-      .and.exactly(convert(6.752088665962219e-7, invert(digital.byteToPebibyte)), 'byteToPebibyte')
-      .and.exactly(convert(6.59383658785373e-10, invert(digital.byteToExbibyte)), 'byteToExbibyte')
-      .and.exactly(convert(6.439293542825908e-13, invert(digital.byteToZebibyte)), 'byteToZebibyte')
-      .and.exactly(convert(6.288372600415926e-16, invert(digital.byteToYobibyte)), 'byteToYobibyte');
-
-    (0).should.be.exactly(convert(0, digital.byteToBit), 'byteToBit')
-      .and.exactly(convert(0, digital.byteToKibibyte), 'byteToKibibyte')
-      .and.exactly(convert(0, digital.byteToMebibyte), 'byteToMebibyte')
-      .and.exactly(convert(0, digital.byteToGibibyte), 'byteToGibibyte')
-      .and.exactly(convert(0, digital.byteToTebibyte), 'byteToTebibyte')
-      .and.exactly(convert(0, digital.byteToPebibyte), 'byteToPebibyte')
-      .and.exactly(convert(0, digital.byteToExbibyte), 'byteToExbibyte')
-      .and.exactly(convert(0, digital.byteToZebibyte), 'byteToZebibyte')
-      .and.exactly(convert(0, digital.byteToYobibyte), 'byteToYobibyte');
+    presets.digitalInformation.should.have.properties([
+      'byteToBit',
+      'byteToKibibyte',
+      'byteToMebibyte',
+      'byteToGibibyte',
+      'byteToTebibyte',
+      'byteToPebibyte',
+      'byteToExbibyte',
+      'byteToZebibyte',
+      'byteToYobibyte'
+    ]);
   });
 });

@@ -25,7 +25,7 @@ Linear presets for converting common units
 - [volume](https://github.com/javiercejudo/linear-presets-volume)
 - luminous intensity
 - plane angle
-- digital storage
+- [digital information](https://github.com/javiercejudo/linear-presets-digital-information)
 
 See [all npm packages with linear presets](https://www.npmjs.com/browse/keyword/linear-presets).
 
