@@ -24,23 +24,23 @@
   },
   "homepage": "https://github.com/javiercejudo/linear-presets",
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-coveralls": "^0.1.3",
-    "gulp-istanbul": "^0.6.0",
-    "gulp-mocha": "^2.0.0",
-    "rescale": "^4.0.1",
-    "rimraf": "^2.3.2",
-    "should": "^5.0.0"
+    "gulp": "3.9.0",
+    "gulp-coveralls": "0.1.4",
+    "gulp-istanbul": "0.6.0",
+    "gulp-mocha": "2.1.3",
+    "rescale": "4.0.1",
+    "rimraf": "2.4.3",
+    "should": "5.2.0"
   },
   "dependencies": {
-    "linear-presets-area": "^1.0.0",
-    "linear-presets-digital-information": "^1.0.0",
-    "linear-presets-length": "^1.0.0",
-    "linear-presets-mass": "^1.0.2",
-    "linear-presets-metric-prefixes": "^1.0.0",
-    "linear-presets-temperature": "^1.0.0",
-    "linear-presets-temperature-difference": "^1.0.0",
-    "linear-presets-time": "^1.0.0",
-    "linear-presets-volume": "^1.0.0"
+    "linear-presets-area": "1.0.0",
+    "linear-presets-digital-information": "1.0.0",
+    "linear-presets-length": "1.0.0",
+    "linear-presets-mass": "1.0.2",
+    "linear-presets-metric-prefixes": "1.0.0",
+    "linear-presets-temperature": "1.0.0",
+    "linear-presets-temperature-difference": "1.0.0",
+    "linear-presets-time": "1.0.0",
+    "linear-presets-volume": "1.0.0"
   }
 }
