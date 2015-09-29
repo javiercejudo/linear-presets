@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "linear-presets-area": "1.0.0",
-    "linear-presets-digital-information": "1.0.0",
+    "linear-presets-digital-information": "2.0.0",
     "linear-presets-length": "1.0.0",
     "linear-presets-mass": "1.0.2",
     "linear-presets-metric-prefixes": "1.0.0",
