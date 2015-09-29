@@ -2,206 +2,219 @@
 
 'use strict';
 
-var should = require('should');
-var rescale = require('rescale').rescale;
+require('should');
+
+
+var Decimal = require('linear-arbitrary-precision')(require('floating-adapter'));
+var rescale = require('rescale')(Decimal).rescale;
 var presets = require('../src/linear-presets').PRESETS;
+var presetFactory = require('linear-preset-factory');
 
 var convert = function convert(x, preset) {
-  return rescale(x, preset[0], preset[1]);
+  return Number(rescale(preset[0], preset[1], x));
 };
 
 var invert = function invert(preset) {
-  return preset.slice(0).reverse();
+  return preset.slice().reverse();
 };
 
 describe('built-in presets', function() {
   it('should include metric prefixes', function() {
-    presets.metricPrefixes.should.have.properties([
-      'noneToYotta',
-      'noneToZetta',
-      'noneToExa',
-      'noneToPeta',
-      'noneToTera',
-      'noneToGiga',
-      'noneToMega',
-      'noneToKilo',
-      'noneToHecto',
-      'noneToDeca',
-      'noneToDeci',
-      'noneToCenti',
-      'noneToMilli',
-      'noneToMicro',
-      'noneToNano',
-      'noneToPico',
-      'noneToFemto',
-      'noneToAtto',
-      'noneToZepto',
-      'noneToYocto'
+    presets.metricPrefixes.conversions.should.have.properties([
+      'none',
+      'yotta',
+      'zetta',
+      'exa',
+      'peta',
+      'tera',
+      'giga',
+      'mega',
+      'kilo',
+      'hecto',
+      'deca',
+      'deci',
+      'centi',
+      'milli',
+      'micro',
+      'nano',
+      'pico',
+      'femto',
+      'atto',
+      'zepto',
+      'yocto'
     ]);
   });
 
   it('should include length', function() {
-    presets.distance.should.have.properties([
-      'metreToKilometre',
-      'metreToCentimetre',
-      'metreToMillimetre',
-      'metreToMile',
-      'metreToYard',
-      'metreToFoot',
-      'metreToInch',
-      'metreToNauticalMile'
+    presets.distance.conversions.should.have.properties([
+      'metre',
+      'kilometre',
+      'centimetre',
+      'millimetre',
+      'mile',
+      'yard',
+      'foot',
+      'inch',
+      'mile'
     ]);
   });
 
   it('should include mass', function() {
-    presets.mass.should.have.properties([
-      'kilogramToMetricTon',
-      'kilogramToGram',
-      'kilogramToMilligram',
-      'kilogramToMicrogram',
-      'kilogramToLongTon',
-      'kilogramToShortTon',
-      'kilogramToStone',
-      'kilogramToPound',
-      'kilogramToOunce'
+    presets.mass.conversions.should.have.properties([
+      'kilogram',
+      'metricTon',
+      'gram',
+      'milligram',
+      'microgram',
+      'longTon',
+      'shortTon',
+      'stone',
+      'pound',
+      'ounce'
     ]);
   });
 
   it('should include time', function() {
-    presets.time.should.have.properties([
-      'secondToNanosecond',
-      'secondToMicrosecond',
-      'secondToMillisecond',
-      'secondToMinute',
-      'secondToHour',
-      'secondToDay',
-      'secondToWeek',
-      'secondToMonth',
-      'secondToYear',
-      'secondToDecade',
-      'secondToCentury',
-      'secondToMillennium'
+    presets.time.conversions.should.have.properties([
+      'second',
+      'nanosecond',
+      'microsecond',
+      'millisecond',
+      'minute',
+      'hour',
+      'day',
+      'week',
+      'month',
+      'year',
+      'decade',
+      'century',
+      'millennium'
     ]);
   });
 
   it('should include electric current', function() {
-    var current = presets.electricCurrent;
+    var current = presetFactory(presets.electricCurrent);
 
-    convert(10, current.ampereToAbampere).should.be.exactly(1);
-    convert(0, current.ampereToAbampere).should.be.exactly(0);
+    convert(10, current.ampere_abampere).should.be.exactly(1);
+    convert(0, current.ampere_abampere).should.be.exactly(0);
   });
 
   it('should include temperature', function() {
-    presets.temperature.should.have.properties([
-      'celsiusToFahrenheit',
-      'celsiusToKelvin',
-      'celsiusToRankine',
-      'celsiusToDelisle',
-      'celsiusToNewton',
-      'celsiusToReaumur',
-      'celsiusToRomer',
+    presets.temperature.conversions.should.have.properties([
+      'celsius',
+      'fahrenheit',
+      'kelvin',
+      'rankine',
+      'delisle',
+      'newton',
+      'reaumur',
+      'romer',
     ]);
   });
 
   it('should include temperature difference', function() {
-    presets.temperatureDifference.should.have.properties([
-      'celsiusToFahrenheit',
-      'celsiusToKelvin',
-      'celsiusToRankine',
-      'celsiusToDelisle',
-      'celsiusToNewton',
-      'celsiusToReaumur',
-      'celsiusToRomer',
+    presets.temperatureDifference.conversions.should.have.properties([
+      'celsius',
+      'fahrenheit',
+      'kelvin',
+      'rankine',
+      'delisle',
+      'newton',
+      'reaumur',
+      'romer',
     ]);
   });
 
   it('should include amount of substance', function() {
-    var substance = presets.amountOfSubstance;
+    var substance = presetFactory(presets.amountOfSubstance);
 
-    convert(9525.43977, substance.moleToPoundMole).should.be.exactly(21);
-    convert(0, substance.moleToPoundMole).should.be.exactly(0);
+    convert(9525.43977, substance.mole_poundMole).should.be.exactly(21);
+    convert(0, substance.mole_poundMole).should.be.exactly(0);
   });
 
   it('should include luminous intensity', function() {
-    var intensity = presets.luminousIntensity;
+    var intensity = presetFactory(presets.luminousIntensity);
 
-    (100).should.be.exactly(convert(101.9367991845056, invert(intensity.candelaToCandlepower)), 'candelaToCandlepower')
-      .and.exactly(convert(108.69565217391303, invert(intensity.candelaToHefnerkerze)), 'candelaToHefnerkerze');
+    (100).should.be.exactly(convert(101.9367991845056, invert(intensity.candela_candlepower)), 'candela_candlepower')
+      .and.exactly(convert(108.69565217391303, invert(intensity.candela_hefnerkerze)), 'candela_hefnerkerze');
 
-    (0).should.be.exactly(convert(0, intensity.candelaToCandlepower), 'candelaToCandlepower')
-      .and.exactly(convert(0, intensity.candelaToHefnerkerze), 'candelaToHefnerkerze');
+    (0).should.be.exactly(convert(0, intensity.candela_candlepower), 'candela_candlepower')
+      .and.exactly(convert(0, intensity.candela_hefnerkerze), 'candela_hefnerkerze');
   });
 
   it('should include velocity', function() {
-    var velocity = presets.velocity;
+    var velocity = presetFactory(presets.velocity);
 
-    (100/9.58).should.be.exactly(convert(23.35006567906474, invert(velocity.metresSecondToMilesHour)), 'metresSecondToMilesHour')
-      .and.exactly(convert(34.24676299596162, invert(velocity.metresSecondToFeetSecond)), 'metresSecondToFeetSecond')
-      .and.exactly(convert(37.578288100208766, invert(velocity.metresSecondToKilometresHour)), 'metresSecondToKilometresHour')
-      .and.exactly(convert(20.290652321926984, invert(velocity.metresSecondToKnot)), 'metresSecondToKnot');
+    (100/9.58).should.be.exactly(convert(23.35006567906474, invert(velocity.metresSecond_milesHour)), 'metresSecond_milesHour')
+      .and.exactly(convert(34.24676299596162, invert(velocity.metresSecond_feetSecond)), 'metresSecond_feetSecond')
+      .and.exactly(convert(37.578288100208766, invert(velocity.metresSecond_kilometresHour)), 'metresSecond_kilometresHour')
+      .and.exactly(convert(20.290652321926984, invert(velocity.metresSecond_knot)), 'metresSecond_knot');
 
-    (0).should.be.exactly(convert(0, velocity.metresSecondToMilesHour), 'metresSecondToMilesHour')
-      .and.exactly(convert(0, velocity.metresSecondToFeetSecond), 'metresSecondToFeetSecond')
-      .and.exactly(convert(0, velocity.metresSecondToKilometresHour), 'metresSecondToKilometresHour')
-      .and.exactly(convert(0, velocity.metresSecondToKnot), 'metresSecondToKnot');
+    (0).should.be.exactly(convert(0, velocity.metresSecond_milesHour), 'metresSecond_milesHour')
+      .and.exactly(convert(0, velocity.metresSecond_feetSecond), 'metresSecond_feetSecond')
+      .and.exactly(convert(0, velocity.metresSecond_kilometresHour), 'metresSecond_kilometresHour')
+      .and.exactly(convert(0, velocity.metresSecond_knot), 'metresSecond_knot');
   });
 
   it('should include volume', function() {
-    presets.volume.should.have.properties([
-      'cubicMetreToMillilitre',
-      'cubicMetreToLitre',
-      'cubicMetreToCubicInch',
-      'cubicMetreToCubicFoot',
-      'cubicMetreToImperialFluidOunce',
-      'cubicMetreToImperialGill',
-      'cubicMetreToImperialPint',
-      'cubicMetreToImperialQuart',
-      'cubicMetreToImperialGallon',
-      'cubicMetreToUSDram',
-      'cubicMetreToUSFluidOunce',
-      'cubicMetreToUSGill',
-      'cubicMetreToUSCup',
-      'cubicMetreToUSPint',
-      'cubicMetreToUSQuart',
-      'cubicMetreToUSGallon'
+    presets.volume.conversions.should.have.properties([
+      'cubicMetre',
+      'millilitre',
+      'litre',
+      'cubicInch',
+      'cubicFoot',
+      'imperialFluidOunce',
+      'imperialGill',
+      'imperialPint',
+      'imperialQuart',
+      'imperialGallon',
+      'USDram',
+      'USFluidOunce',
+      'USGill',
+      'USCup',
+      'USPint',
+      'USQuart',
+      'USGallon'
     ]);
   });
 
   it('should include area', function() {
-    presets.area.should.have.properties([
-      'squareMetreToSquareKilometre',
-      'squareMetreToHectare',
-      'squareMetreToSquareMile',
-      'squareMetreToAcre',
-      'squareMetreToSquareYard',
-      'squareMetreToSquareFoot',
-      'squareMetreToSquareInch'
+    presets.area.conversions.should.have.properties([
+      'squareMetre',
+      'squareKilometre',
+      'hectare',
+      'squareMile',
+      'acre',
+      'squareYard',
+      'squareFoot',
+      'squareInch'
     ]);
   });
 
   it('should include plane angle', function() {
-    var angle = presets.angle;
+    var angle = presetFactory(presets.angle);
 
-    (Math.PI / 4).should.be.exactly(convert(1 / 8, invert(angle.radianToTurn)), 'radianToTurn')
-      .and.exactly(convert(45, invert(angle.radianToDegree)), 'radianToDegree')
-      .and.exactly(convert(50, invert(angle.radianToGradian)), 'radianToGradian');
+    (Math.PI / 4).should.be.exactly(convert(1 / 8, invert(angle.radian_turn)), 'radian_turn')
+      .and.exactly(convert(45, invert(angle.radian_degree)), 'radian_degree')
+      .and.exactly(convert(50, invert(angle.radian_gradian)), 'radian_gradian');
 
-    (0).should.be.exactly(convert(0, angle.radianToTurn), 'radianToTurn')
-      .and.exactly(convert(0, angle.radianToDegree), 'radianToDegree')
-      .and.exactly(convert(0, angle.radianToGradian), 'radianToGradian');
+    (0).should.be.exactly(convert(0, angle.radian_turn), 'radian_turn')
+      .and.exactly(convert(0, angle.radian_degree), 'radian_degree')
+      .and.exactly(convert(0, angle.radian_gradian), 'radian_gradian');
   });
 
   it('should include digital storage', function() {
-    presets.digitalInformation.should.have.properties([
-      'byteToBit',
-      'byteToKibibyte',
-      'byteToMebibyte',
-      'byteToGibibyte',
-      'byteToTebibyte',
-      'byteToPebibyte',
-      'byteToExbibyte',
-      'byteToZebibyte',
-      'byteToYobibyte'
+    presets.digitalInformation.conversions.should.have.properties([
+      'byte',
+      'bit',
+      'kibibyte',
+      'mebibyte',
+      'gibibyte',
+      'tebibyte',
+      'pebibyte',
+      'exbibyte',
+      'zebibyte',
+      'yobibyte'
     ]);
   });
 });
