@@ -4,7 +4,6 @@
 
 require('should');
 
-
 var Decimal = require('linear-arbitrary-precision')(require('floating-adapter'));
 var rescale = require('rescale')(Decimal).rescale;
 var presets = require('../src/linear-presets').PRESETS;
@@ -143,17 +142,13 @@ describe('built-in presets', function() {
   });
 
   it('should include velocity', function() {
-    var velocity = presetFactory(presets.velocity);
-
-    (100/9.58).should.be.exactly(convert(23.35006567906474, invert(velocity.metresSecond_milesHour)), 'metresSecond_milesHour')
-      .and.exactly(convert(34.24676299596162, invert(velocity.metresSecond_feetSecond)), 'metresSecond_feetSecond')
-      .and.exactly(convert(37.578288100208766, invert(velocity.metresSecond_kilometresHour)), 'metresSecond_kilometresHour')
-      .and.exactly(convert(20.290652321926984, invert(velocity.metresSecond_knot)), 'metresSecond_knot');
-
-    (0).should.be.exactly(convert(0, velocity.metresSecond_milesHour), 'metresSecond_milesHour')
-      .and.exactly(convert(0, velocity.metresSecond_feetSecond), 'metresSecond_feetSecond')
-      .and.exactly(convert(0, velocity.metresSecond_kilometresHour), 'metresSecond_kilometresHour')
-      .and.exactly(convert(0, velocity.metresSecond_knot), 'metresSecond_knot');
+    presets.velocity.conversions.should.have.properties([
+      'metresSecond',
+      'milesHour',
+      'feetSecond',
+      'kilometresHour',
+      'knot'
+    ]);
   });
 
   it('should include volume', function() {

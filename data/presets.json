@@ -13,16 +13,6 @@
       "poundMole": [[0, 453.59237], [0, 1]]
     }
   },
-  "velocity": {
-    "base": "metresSecond",
-    "conversions": {
-      "metresSecond": [[0, 1], [0, 1]],
-      "milesHour": [[0, 1], [0, 2.236936292054402]],
-      "feetSecond": [[0, 1], [0, 3.280839895013123]],
-      "kilometresHour": [[0, 1], [0, 3.6]],
-      "knot": [[0, 1], [0, 1.943844492440605]]
-    }
-  },
   "luminousIntensity": {
     "base": "candela",
     "conversions": {

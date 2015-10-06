@@ -13,7 +13,9 @@ presets.time = require('linear-presets-time');
 presets.area = require('linear-presets-area');
 presets.volume = require('linear-presets-volume');
 presets.digitalInformation = require('linear-presets-digital-information');
+presets.velocity = require('linear-presets-velocity');
 
+// aliases
 presets.distance = presets.length;
 
 exports.PRESETS = presets;
