@@ -20,11 +20,11 @@ Linear presets for converting common units
 - [temperature](https://github.com/javiercejudo/linear-presets-temperature)
 - [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
 - amount of substance
-- velocity
+- [velocity](https://github.com/javiercejudo/linear-presets-velocity)
 - [area](https://github.com/javiercejudo/linear-presets-area)
 - [volume](https://github.com/javiercejudo/linear-presets-volume)
 - luminous intensity
-- plane angle
+- [plane angle](https://github.com/javiercejudo/linear-presets-angle)
 - [digital information](https://github.com/javiercejudo/linear-presets-digital-information)
 
 See [all npm packages with linear presets](https://www.npmjs.com/browse/keyword/linear-presets).

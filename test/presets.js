@@ -187,15 +187,12 @@ describe('built-in presets', function() {
   });
 
   it('should include plane angle', function() {
-    var angle = presetFactory(presets.angle);
-
-    (Math.PI / 4).should.be.exactly(convert(1 / 8, invert(angle.radian_turn)), 'radian_turn')
-      .and.exactly(convert(45, invert(angle.radian_degree)), 'radian_degree')
-      .and.exactly(convert(50, invert(angle.radian_gradian)), 'radian_gradian');
-
-    (0).should.be.exactly(convert(0, angle.radian_turn), 'radian_turn')
-      .and.exactly(convert(0, angle.radian_degree), 'radian_degree')
-      .and.exactly(convert(0, angle.radian_gradian), 'radian_gradian');
+    presets.angle.conversions.should.have.properties([
+      'radian',
+      'turn',
+      'degree',
+      'gradian'
+    ]);
   });
 
   it('should include digital storage', function() {
