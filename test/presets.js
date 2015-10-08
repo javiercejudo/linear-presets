@@ -92,10 +92,10 @@ describe('built-in presets', function() {
   });
 
   it('should include electric current', function() {
-    var current = presetFactory(presets.electricCurrent);
-
-    convert(10, current.ampere_abampere).should.be.exactly(1);
-    convert(0, current.ampere_abampere).should.be.exactly(0);
+    presets.electricCurrent.conversions.should.have.properties([
+      'ampere',
+      'abampere'
+    ]);
   });
 
   it('should include temperature', function() {

@@ -16,7 +16,7 @@ Linear presets for converting common units
 - [length](https://github.com/javiercejudo/linear-presets-length)
 - [mass](https://github.com/javiercejudo/linear-presets-mass)
 - [time](https://github.com/javiercejudo/linear-presets-time)
-- electric current
+- [electric current](https://github.com/javiercejudo/linear-presets-electric-current)
 - [temperature](https://github.com/javiercejudo/linear-presets-temperature)
 - [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
 - amount of substance

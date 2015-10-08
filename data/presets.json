@@ -1,11 +1,4 @@
 {
-  "electricCurrent": {
-    "base": "ampere",
-    "conversions": {
-      "ampere": [[0, 1], [0, 1]],
-      "abampere": [[0, 10], [0, 1]]
-    }
-  },
   "amountOfSubstance": {
     "base": "mole",
     "conversions": {
