@@ -23,7 +23,7 @@ Linear presets for converting common units
 - [velocity](https://github.com/javiercejudo/linear-presets-velocity)
 - [area](https://github.com/javiercejudo/linear-presets-area)
 - [volume](https://github.com/javiercejudo/linear-presets-volume)
-- luminous intensity
+- [luminous intensity](https://github.com/javiercejudo/linear-presets-luminous-intensity)
 - [plane angle](https://github.com/javiercejudo/linear-presets-angle)
 - [digital information](https://github.com/javiercejudo/linear-presets-digital-information)
 

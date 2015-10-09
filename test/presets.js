@@ -19,7 +19,7 @@ var invert = function invert(preset) {
 
 describe('built-in presets', function() {
   it('should include metric prefixes', function() {
-    presets.metricPrefixes.conversions.should.have.properties([
+    presets.metricPrefixes.conversions.should.have.keys([
       'none',
       'yotta',
       'zetta',
@@ -45,7 +45,7 @@ describe('built-in presets', function() {
   });
 
   it('should include length', function() {
-    presets.distance.conversions.should.have.properties([
+    presets.length.conversions.should.have.keys([
       'metre',
       'kilometre',
       'centimetre',
@@ -54,12 +54,15 @@ describe('built-in presets', function() {
       'yard',
       'foot',
       'inch',
-      'mile'
+      'mile',
+      'nauticalMile'
     ]);
+
+    presets.distance.should.eql(presets.length);
   });
 
   it('should include mass', function() {
-    presets.mass.conversions.should.have.properties([
+    presets.mass.conversions.should.have.keys([
       'kilogram',
       'metricTon',
       'gram',
@@ -74,7 +77,7 @@ describe('built-in presets', function() {
   });
 
   it('should include time', function() {
-    presets.time.conversions.should.have.properties([
+    presets.time.conversions.should.have.keys([
       'second',
       'nanosecond',
       'microsecond',
@@ -92,14 +95,14 @@ describe('built-in presets', function() {
   });
 
   it('should include electric current', function() {
-    presets.electricCurrent.conversions.should.have.properties([
+    presets.electricCurrent.conversions.should.have.keys([
       'ampere',
       'abampere'
     ]);
   });
 
   it('should include temperature', function() {
-    presets.temperature.conversions.should.have.properties([
+    presets.temperature.conversions.should.have.keys([
       'celsius',
       'fahrenheit',
       'kelvin',
@@ -112,7 +115,7 @@ describe('built-in presets', function() {
   });
 
   it('should include temperature difference', function() {
-    presets.temperatureDifference.conversions.should.have.properties([
+    presets.temperatureDifference.conversions.should.have.keys([
       'celsius',
       'fahrenheit',
       'kelvin',
@@ -125,24 +128,22 @@ describe('built-in presets', function() {
   });
 
   it('should include amount of substance', function() {
-    presets.amountOfSubstance.conversions.should.have.properties([
+    presets.amountOfSubstance.conversions.should.have.keys([
       'mole',
       'poundMole'
     ]);
   });
 
   it('should include luminous intensity', function() {
-    var intensity = presetFactory(presets.luminousIntensity);
-
-    (100).should.be.exactly(convert(101.9367991845056, invert(intensity.candela_candlepower)), 'candela_candlepower')
-      .and.exactly(convert(108.69565217391303, invert(intensity.candela_hefnerkerze)), 'candela_hefnerkerze');
-
-    (0).should.be.exactly(convert(0, intensity.candela_candlepower), 'candela_candlepower')
-      .and.exactly(convert(0, intensity.candela_hefnerkerze), 'candela_hefnerkerze');
+    presets.luminousIntensity.conversions.should.have.keys([
+      'candela',
+      'candlepower',
+      'hefnerkerze'
+    ]);
   });
 
   it('should include velocity', function() {
-    presets.velocity.conversions.should.have.properties([
+    presets.velocity.conversions.should.have.keys([
       'metresSecond',
       'milesHour',
       'feetSecond',
@@ -152,7 +153,7 @@ describe('built-in presets', function() {
   });
 
   it('should include volume', function() {
-    presets.volume.conversions.should.have.properties([
+    presets.volume.conversions.should.have.keys([
       'cubicMetre',
       'millilitre',
       'litre',
@@ -174,7 +175,7 @@ describe('built-in presets', function() {
   });
 
   it('should include area', function() {
-    presets.area.conversions.should.have.properties([
+    presets.area.conversions.should.have.keys([
       'squareMetre',
       'squareKilometre',
       'hectare',
@@ -187,7 +188,7 @@ describe('built-in presets', function() {
   });
 
   it('should include plane angle', function() {
-    presets.angle.conversions.should.have.properties([
+    presets.angle.conversions.should.have.keys([
       'radian',
       'turn',
       'degree',
@@ -196,7 +197,7 @@ describe('built-in presets', function() {
   });
 
   it('should include digital storage', function() {
-    presets.digitalInformation.conversions.should.have.properties([
+    presets.digitalInformation.conversions.should.have.keys([
       'byte',
       'bit',
       'kibibyte',
