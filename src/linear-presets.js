@@ -4,6 +4,7 @@
 
 var presets = require('../data/presets.json');
 
+presets.amountOfSubstance = require('linear-presets-amount-of-substance');
 presets.angle = require('linear-presets-angle');
 presets.area = require('linear-presets-area');
 presets.digitalInformation = require('linear-presets-digital-information');

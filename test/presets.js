@@ -125,10 +125,10 @@ describe('built-in presets', function() {
   });
 
   it('should include amount of substance', function() {
-    var substance = presetFactory(presets.amountOfSubstance);
-
-    convert(9525.43977, substance.mole_poundMole).should.be.exactly(21);
-    convert(0, substance.mole_poundMole).should.be.exactly(0);
+    presets.amountOfSubstance.conversions.should.have.properties([
+      'mole',
+      'poundMole'
+    ]);
   });
 
   it('should include luminous intensity', function() {

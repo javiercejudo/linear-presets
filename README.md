@@ -19,7 +19,7 @@ Linear presets for converting common units
 - [electric current](https://github.com/javiercejudo/linear-presets-electric-current)
 - [temperature](https://github.com/javiercejudo/linear-presets-temperature)
 - [temperature difference](https://github.com/javiercejudo/linear-presets-temperature-difference)
-- amount of substance
+- [amount of substance](https://github.com/javiercejudo/linear-presets-amount-of-substance)
 - [velocity](https://github.com/javiercejudo/linear-presets-velocity)
 - [area](https://github.com/javiercejudo/linear-presets-area)
 - [volume](https://github.com/javiercejudo/linear-presets-volume)

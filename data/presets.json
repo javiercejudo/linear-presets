@@ -1,11 +1,4 @@
 {
-  "amountOfSubstance": {
-    "base": "mole",
-    "conversions": {
-      "mole": [[0, 1], [0, 1]],
-      "poundMole": [[0, 453.59237], [0, 1]]
-    }
-  },
   "luminousIntensity": {
     "base": "candela",
     "conversions": {
