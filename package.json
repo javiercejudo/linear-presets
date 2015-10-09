@@ -36,7 +36,7 @@
     "should": "7.1.0"
   },
   "dependencies": {
-    "linear-presets-angle": "1.0.0",
+    "linear-presets-angle": "1.0.1",
     "linear-presets-area": "2.0.1",
     "linear-presets-digital-information": "2.0.0",
     "linear-presets-electric-current": "1.0.0",
