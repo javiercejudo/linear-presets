@@ -4,23 +4,11 @@
 
 require('should');
 
-var Decimal = require('linear-arbitrary-precision')(require('floating-adapter'));
-var rescale = require('rescale')(Decimal).rescale;
 var presets = require('../src/linear-presets').PRESETS;
-var presetFactory = require('linear-preset-factory');
-
-var convert = function convert(x, preset) {
-  return Number(rescale(preset[0], preset[1], x));
-};
-
-var invert = function invert(preset) {
-  return preset.slice().reverse();
-};
 
 describe('built-in presets', function() {
   it('should include metric prefixes', function() {
     presets.metricPrefixes.conversions.should.have.keys([
-      'none',
       'yotta',
       'zetta',
       'exa',
@@ -31,6 +19,7 @@ describe('built-in presets', function() {
       'kilo',
       'hecto',
       'deca',
+      'none',
       'deci',
       'centi',
       'milli',
@@ -54,11 +43,8 @@ describe('built-in presets', function() {
       'yard',
       'foot',
       'inch',
-      'mile',
       'nauticalMile'
     ]);
-
-    presets.distance.should.eql(presets.length);
   });
 
   it('should include mass', function() {

@@ -2,7 +2,7 @@
 
 'use strict';
 
-var presets = {
+exports.PRESETS = {
   amountOfSubstance: require('linear-presets-amount-of-substance'),
   angle: require('linear-presets-angle'),
   area: require('linear-presets-area'),
@@ -18,8 +18,3 @@ var presets = {
   velocity: require('linear-presets-velocity'),
   volume: require('linear-presets-volume')
 };
-
-// aliases
-presets.distance = presets.length;
-
-exports.PRESETS = presets;
