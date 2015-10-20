@@ -33,7 +33,7 @@
     "linear-preset-factory": "^1.0.2",
     "rescale": "8.0.1",
     "rimraf": "2.4.3",
-    "should": "7.1.0"
+    "should": "7.1.1"
   },
   "dependencies": {
     "linear-presets-amount-of-substance": "1.0.0",
